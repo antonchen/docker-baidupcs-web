@@ -1,0 +1,22 @@
+{
+    "appid": 265486,
+    "cache_size": 30000,
+    "max_parallel": 200,
+    "max_upload_parallel": 10,
+    "max_download_load": 5,
+    "user_agent": "netdisk;8.3.1;android-android",
+    "savedir": "/downloads",
+    "enable_https": false,
+    "proxy": "",
+    "access_pass": "",
+    "local_addrs": "",
+    "download_opts": {
+        "IsExecutedPermission": false,
+        "IsOverwrite": false,
+        "IsShareDownload": false,
+        "IsLocateDownload": false,
+        "IsLocatePanAPIDownload": false,
+        "IsStreaming": false,
+        "NoCheck": false
+    }
+}

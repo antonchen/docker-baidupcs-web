@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+
+_term() {
+  echo "Caught SIGTERM signal!"
+  pkill -15 BaiduPCS-Go
+}
+
+        trap _term SIGTERM
+	
+	s6-setuidgid alpine /app/baidupcs-web/BaiduPCS-Go &
+
+	wait

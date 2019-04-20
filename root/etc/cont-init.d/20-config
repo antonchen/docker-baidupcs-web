@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+	/downloads
+
+# copy config
+[[ ! -f /app/baidupcs-web/pcs_config.json ]] && cp /defaults/pcs_config.json /app/baidupcs-web/pcs_config.json
+
+# permissions
+chown -R alpine:alpine \
+    /app/baidupcs-web \
+	/downloads \
+
+if [[ $(stat -c '%a' /downloads) -lt 700 ]]; then
+    chmod 755 /downloads
+fi
+
+if [[ $(stat -c '%a' /app/baidupcs-web/pcs_config.json) -lt 600 ]]; then
+    chmod 644 /app/baidupcs-web/pcs_config.json
+fi
